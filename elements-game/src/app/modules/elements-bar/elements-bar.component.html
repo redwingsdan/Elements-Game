@@ -1,0 +1,12 @@
+<div class="side-bar">
+  <div class="side-bar-content">
+    <div class="title">
+      <h1>Elements</h1>
+    </div>
+    <div class="element-list">
+      <div class="dnd-list" cdkDropList [cdkDropListData]="allElements" (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
+        <element *ngFor="let myElement of allElements" [el]="myElement" [iconClass]="'inline'" class="element-wrapper" cdkDrag [cdkDragData]="myElement"></element>
+      </div>
+    </div>
+  </div>
+</div>

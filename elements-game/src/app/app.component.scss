@@ -1,0 +1,15 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-basis: 100%;
+}
+
+.container > .play-area-wrapper {
+  flex: 0.8;
+}
+
+.container > .elements-bar-wrapper {
+  flex: 0.2;
+}

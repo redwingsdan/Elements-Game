@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ElementModule } from './shared/element/element.module';
+import { ElementsBarModule } from './modules/elements-bar/elements-bar.module';
+import { PlayAreaModule } from './modules/play-area/play-area.module';
+import { DragAndDropService } from './shared/drag-and-drop/drag-and-drop.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,11 @@ import { ElementModule } from './shared/element/element.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-	  ElementModule
+	  ElementModule,
+    PlayAreaModule,
+    ElementsBarModule
   ],
-  providers: [],
+  providers: [DragAndDropService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

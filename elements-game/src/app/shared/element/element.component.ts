@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Element } from './element';
+import { AppElement } from './element';
 
 @Component({
   selector: 'element',
@@ -7,7 +7,8 @@ import { Element } from './element';
   styleUrls: ['./element.component.scss']
 })
 export class ElementComponent implements OnInit {
-  @Input() el?: Element;
+  @Input() el?: AppElement;
+  @Input() iconClass: string = "";
   constructor(){}
 
   ngOnInit() {

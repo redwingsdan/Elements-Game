@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Element } from './shared/element/element';
-import { allElements } from './shared/element/element.service';
+import { DragAndDropService } from './shared/drag-and-drop/drag-and-drop.service';
+import { AppElement } from './shared/element/element';
+import { air, earth, fire, lava, mud, water } from 'src/app/shared/element/element.service';
+import { copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,22 @@ import { allElements } from './shared/element/element.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Elements Game';
-  allElements = allElements;
+  title = 'elements-game';
+  elementsList: AppElement[] = [air, water, fire, earth, lava, mud];
+  constructor(private dndService: DragAndDropService) {}
+
+  addItem(event: any) {
+    event.item.data.position = event.distance;
+    this.elementsList = this.elementsList.concat({... event.item.data});
+    //copyArrayItem(event.previousContainer.data,
+    //  this.elementsList,
+    //  event.previousIndex,
+    //  event.currentIndex);
+  }
+  dropItem(event: any){
+    //this.dndService.drop(event);
+    if (event.distance.x <= -150) {
+      this.addItem(event);
+    }
+  }
 }

@@ -1,0 +1,13 @@
+.element-icon{
+  text-align: center;
+  &.inline{
+    display:inline;
+    padding-right: 5px;
+  }
+}
+.element-container{
+  display: inline-block;
+}
+.element{
+  display: block;
+}

@@ -1,0 +1,29 @@
+.play-area{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  border-right: 1px solid black;
+  height: 100vh;
+  background-color: #F5EFE8;
+}
+
+.remove-icon{
+  font-size: 90px;
+  position: absolute;
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.play-area-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cdk-drag-dragging {
+  cursor: grabbing !important;
+}
+
+.element-wrapper{
+  cursor: grab;
+}

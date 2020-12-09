@@ -1,0 +1,8 @@
+<div class="play-area">
+  <span aria-hidden="true" class="remove-icon">&times;</span>
+  <div class="play-area-content">
+    <div cdkDropList [cdkDropListData]="elementsList" cdkDragBoundary=".play-area" (cdkDragEnded)="onDrop($event)">
+      <element *ngFor="let item of elementsList" [el]="item" class="element-wrapper" cdkDrag [cdkDragData]="item" [cdkDragFreeDragPosition]="item.position"></element>
+    </div>
+  </div>
+</div>

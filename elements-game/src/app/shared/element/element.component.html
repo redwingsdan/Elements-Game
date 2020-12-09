@@ -1,3 +1,8 @@
-<div>
-{{el?.id + ' - ' + el?.name}}
+<div class="element">
+  <div class="element-container">
+    <div class="element-icon" [ngClass]="iconClass">
+      <fa-icon [icon]="el?.icon"></fa-icon>
+    </div>
+    <span class="element-name">{{el?.name}}</span>
+  </div>
 </div>
